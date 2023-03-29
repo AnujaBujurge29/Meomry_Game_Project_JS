@@ -1,48 +1,78 @@
-const Cards = [
-  { name: "Pair 1", img: "images\logo_1.png" },
-  { name: "Pair 2", img: "images\logo_2.png" },
-  { name: "Pair 3", img: "images\logo_3.png" },
-  { name: "Pair 4", img: "images\logo_4.jpg" },
-  { name: "Pair 5", img: "images\logo_5.png" },
-  { name: "Pair 6", img: "images\logo_6.jpg" },
-  { name: "Pair 7", img: "images\logo_7.png" },
-  { name: "Pair 8", img: "images\logo_8.jpg" },
-];
 
+//button to start and reset
 const buttonStartEl = document.querySelector(".start")
+// main contaniner with 2 players
 const containerMainEL = document.querySelector('.container_main')
-const container1El = document.querySelector(".container_1")
-const container2El = document.querySelector(".container_2")
-const player1El = document.querySelector(".player_1")
-const player2El = document.querySelector(".player_2")
+// const container1El = document.querySelector(".container_1")
+// const player1El = document.querySelector(".player_1")
+// const player2El = document.querySelector(".player_2")
 
+// contaniner for tiles and game
+const container2El = document.querySelector(".container_2")
+const cards = document.querySelectorAll(".tiles")
 
 buttonStartEl.addEventListener('click', function(e){
         if (containerMainEL.style.visibility === 'hidden') {
-            containerMainEL.style.visibility = 'visible';
+            containerMainEL.style.visibility = 'visible';    
             buttonStartEl.innerHTML  = 'RESET'
           } else {
             containerMainEL.style.visibility = 'hidden';
             buttonStartEl.innerHTML  = 'Start Game'
-          }    
-        GameStart()
-    
+          }     
 })
 
-function GameStart(){
+let hasFlippedCard = false; //
+let lockBoard = false; //if tiles are matched, locked the tiles
+let firstCard, secondCard;
 
+function flipCard() {
+  if (lockBoard) return;
+  if (this === firstCard) return;
+
+  this.classList.add('flip');
+
+  if (!hasFlippedCard) {
+    // first click
+    hasFlippedCard = true;
+    firstCard = this;
+    return;
+  }
+  // second click
+  secondCard = this;
+  checkForMatch();
 }
 
+function checkForMatch() {
+  let isMatch = firstCard.dataset.name === secondCard.dataset.name;
+  isMatch ? disableCards() : unflipCards();
+}
 
-// startBtn.addEventListener('click', function (event) {
-//     if (event.target) {
-//         startBtn.style.visibility = 'hidden';
+function disableCards() {
+  firstCard.removeEventListener('click', flipCard);
+  secondCard.removeEventListener('click', flipCard);
+  resetBoard();
+}
 
-//         instructionsEl.textContent = 'Choose your difficulty';
-//         instructionsEl.setAttribute('class', 'instructions-design');
+function unflipCards() {
+  lockBoard = true;
 
-//         chooseDifficulty();
-//         generateBlocks(); //put this inside an addeventlistener in the choosedifficulty method
+  setTimeout(() => {
+    firstCard.classList.remove('flip');
+    secondCard.classList.remove('flip');
+    resetBoard();
+  }, 800);
+}
 
-//     }
-// });
+function resetBoard() {
+  [hasFlippedCard, lockBoard] = [false, false];
+  [firstCard, secondCard] = [null, null];
+}
+
+(function shuffle() {
+  cards.forEach(evt => {
+    let randomPos = Math.floor(Math.random() * 12);
+    evt.style.order = randomPos;
+  });
+})();
+
+cards.forEach(card => card.addEventListener('click', flipCard));
