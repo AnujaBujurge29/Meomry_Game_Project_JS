@@ -1,28 +1,62 @@
-.container_main{
-  background-color: rgb(223, 223, 114);
+*{
   text-align: center;
+  background-color:pink;
+  margin: 0px;
+}
+.container_main{
+  text-align: center;
+  visibility: hidden;
 }
 .container_1 {
+  background-color: rgb(201, 164, 236);
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr ;
   grid-template-columns: 1fr 1fr 1fr;
+  margin: 10px;
+
 }
+
 .start{
-  grid-column-start: 2;
-  grid-column-end: 3;
+  border-radius:2em;
+  font-size: larger;
+  font-weight: bold;
 }
-.player_2{
+.start:hover{
+  background-color: #4CAF50;
+}
+.player_1{
+  background-color: rgb(223, 223, 114);
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.player_2 {
+  background-color: rgb(223, 223, 114);
+  grid-row-start: 1;
+  grid-row-end: 2;
   grid-column-start: 3;
   grid-column-end: 4;
 }
 .container_main div {
-  margin: 10px;
   padding: 20px;
   font-size: 30px;
   border: 2px solid black;
 }
 .container_2{
+  background-color: lightgrey;
   display: grid;
+  gap: 5px;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.container_2 div{
+  background-color: purple;
+  color: white;
+  margin: 0px;
+  /* height: 50%;
+  width: 50%; */
 }
