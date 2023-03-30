@@ -1,0 +1,94 @@
+/* @import url("https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap");
+:root {
+  --primary-color: rgb(149, 0, 255);
+  --primary-color-darker: rgb(85, 112, 84);
+}
+* {
+  box-sizing: border-box;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--primary-color);
+  font-family: "Poppins", sans-serif;
+  font-size: 1.3em;
+  line-height: 1.5em;
+}
+.stopwatch {
+  max-width: 640px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+.watch {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  height: 10rem;
+  border-radius: 20px;
+}
+h2 {
+  font-size: 3em;
+  font-weight: 400;
+  height: 50px;
+  width: 335px;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px 0;
+}
+.buttons button {
+  margin: 10px;
+  margin-top: 20px;
+  border: none;
+  padding: 15px 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+h2.paused {
+  color: red;
+} */
+
+#stopWatch {
+    width: 280px;
+    height: auto;
+    text-align: center;
+    display: block;
+    padding: 5px;
+    margin: 0 auto;
+  }
+  #timer,
+  #fulltime {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    font-weight: bold;
+    font-family: tahoma;
+    display: block;
+    border: 1px solid #eee;
+    text-align: center;
+    box-shadow: 0 0 5px #ccc;
+    background: #fbfbf0;
+    color: darkblue;
+    border-bottom: 4px solid darkgrey;
+  }
+  button {
+    cursor: pointer;
+    font-weight: 700;
+  }
+  #fulltime {
+    display: none;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
