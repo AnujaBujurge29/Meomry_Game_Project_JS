@@ -1,68 +1,75 @@
 * {
   text-align: center;
-  background-color: pink;
+  background-color: lightblue;
   margin: 0px;
+  /* font-family: Consolas; */
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
+}
+.heading{
+  padding: 20px;
+  margin: 20px;
 }
 .container_main {
   text-align: center;
   visibility: hidden;
 }
-.container_1 {
-  background-color: rgb(201, 164, 236);
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin: 10px;
-}
-
 .start {
-  border-radius: 2em;
+  border-radius: 10px;
   font-size: larger;
   font-weight: bold;
+  padding: 5px;
+  margin: 5px;
 }
 .start:hover {
-  background-color: #abf4ae;
+  background-color: #e3cad6;
+}
+/* first block whcih contain 2 boxes for 2 players*/
+.container_1 {
+  background-color: rgb(201, 164, 236);
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  padding: 0;
+  height: 100px;
+  text-align: center;
+  border: 2px solid rgb(137, 68, 145);
+  border-radius: 30px;
 }
 .player_1 {
   background-color: rgb(223, 223, 114);
-  grid-row-start: 1;
-  grid-row-end: 2;
-  grid-column-start: 1;
-  grid-column-end: 2;
+  margin: 10px;
+  height: 70px;
+  width: 200px;
+  padding: 10px;
+  border-radius: 15px;
+  border: 2px solid rgb(137, 68, 145);
 }
 .player_2 {
   background-color: rgb(223, 223, 114);
-  grid-row-start: 1;
-  grid-row-end: 2;
-  grid-column-start: 3;
-  grid-column-end: 4;
+  margin: 10px;
+  height: 65px;
+  width: 200px;
+  padding: 10px;
+  border-radius: 15px;
+  border: 2px solid rgb(137, 68, 145);
 }
-.container_main div {
-  padding: 20px;
-  font-size: 30px;
-  border: 2px solid black;
-}
-.container_2 {
-  background-color: lightgrey;
-  display: flex;
-  height: 100vh;
-  margin-left: 25%;
-  margin-right: 25%;
-}
+/* second block whoch conatin main tiles of game*/
+
 .game-tiles {
-  background-color: purple;
-  /* margin: 0px; */
+  /* background-color: red; */
   width: 640px;
   height: 640px;
   margin: auto;
-  margin-top: 10px;
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  /* height: 50%;
-  width: 50%; */
+  perspective: 1000px;
+  
 }
 .tiles {
   width: calc(25% - 10px);
@@ -71,23 +78,22 @@
   position: relative;
   transform: scale(1);
   transform-style: preserve-3d;
-  transition: transform 0.5s;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s; 
 }
 .tiles:active {
-  transform: scale(0.97);
+  transform: scale(0.97); 
   transition: transform 0.2s;
 }
 .tiles.flip {
   transform: rotateY(180deg);
+  
 }
-
 .shuffled,
 .original {
+  left:0;
+  top: 0;
   width: 100%;
   height: 100%;
-  /* width: calc(0% - 10px);
-  height: calc(33.333% - 10px); */
   padding: 5px;
   position: absolute;
   border-radius: 5px;
@@ -97,3 +103,11 @@
 .shuffled {
   transform: rotateY(180deg);
 }
+
+/* .container_2 {
+  background-color: lightgrey;
+  display: flex;
+  height: 100vh;
+  margin-left: 25%;
+  margin-right: 25%;
+} */
