@@ -1,33 +1,39 @@
 let hasFlippedCard = false; // original position of card
 let lockBoard = false; //if tiles are matched, locked the tiles
-let firstCard, secondCard;
-let matched = 0;
-let totalMoves = 0;
-let totalTime = 0;
-let milliseconds = 0;
-let timer=0;
-let dateTimer
+let firstCard, secondCard; // the pair of 2 cards that are clicked to check
+let matched = 0; //to check if all cards are open and game end
+let totalMoves = 0; // count total moves of player to finish the game
+let totalTime = 0; // total time required for player to finish the game
+let milliseconds = 0; // timer counter
+let timer = 0; //timer counter
+let dateTimer; // timer counter
 
 const watch = document.querySelector(".watch");
+// element for stopwatch on top
 const finaltimeEL = document.querySelector(".finalTime");
-
-//button to start and reset
-const buttonStartEl = document.querySelector(".start");
+// element for pop-out total time required to finish the game
 const containerMainEL = document.querySelector(".container_main");
+//element to pop-up game tiles
 const modalEl = document.querySelector(".modalWin");
 //start button click event to start the game.
 const cards = document.querySelectorAll(".tiles");
+//select all cards
+const buttonStartEl = document.querySelector(".start");
+//button to Game Restart, start and Replay
 buttonStartEl.addEventListener("click", refreshGame);
+//click event to start and restart the game
 
 function refreshGame() {
-  matched = 0
-  totalMoves = 0
-  totalTime = 0
+  // Start and restart game
+  matched = 0;
+  totalMoves = 0;
+  totalTime = 0;
+  // all values initialsed to zero at start of game
   if (containerMainEL.style.visibility === "hidden") {
     containerMainEL.style.visibility = "visible";
-    buttonStartEl.innerHTML = "RESET";
+    buttonStartEl.innerHTML = "Replay";
     modalEl.style.visibility = "hidden";
-    // resetBoard()
+    //change the visibilty of game-board
     resetWatch();
   } else {
     containerMainEL.style.visibility = "hidden";
@@ -35,40 +41,33 @@ function refreshGame() {
     buttonStartEl.innerHTML = "Start Game";
     cards.forEach((card) => card.classList.remove("flip"));
     cards.forEach((card) => card.addEventListener("click", flipCard));
-
+    // game restared
   }
-  // if (buttonStartEl.innerHTML === "RESET") {
-    
-  //   // cards.classList.remove("flip");
-  // }
 }
 
-
-// cards.forEach((card) => card.addEventListener("click", flipCard));
-
-function flipCard() {
+function flipCard() {// function to take input as 2 tiles and flipped it
+  //start of game,
   //this = element in tiles class, which is clicked
   StartWatch();
   totalMoves++;
   // console.log(totalMoves);
   if (lockBoard) return;
   if (this === firstCard) return;
-  this.classList.add("flip");
+  this.classList.add("flip");// flip the cards
   if (!hasFlippedCard) {
     // first card click
     hasFlippedCard = true; // card is flipped now
-    firstCard = this; // console.log(firstCard);
-    return;
+    firstCard = this; //firstcard clicked
+    // return;
   } else {
     secondCard = this; // second card click
     checkForMatch(); //cards match or not???
   }
 }
 
-function checkForMatch() {
-  //checking match of cards
+function checkForMatch() {// check if 2 cards flipped are same or not
   if (firstCard.dataset.name === secondCard.dataset.name) {
-    disableCards();
+    disableCards();// if two cards are same, disable them for flipping to origi
     matched += 2;
     if (hasWon()) {
       // pauseWatch();
@@ -108,8 +107,7 @@ function resetBoard() {
 function hasWon() {
   if (matched === 16) {
     modalEl.style.visibility = "visible";
-    pauseWatch()
-    // resetWatch()
+    pauseWatch();
     return true;
   } else {
     return false;
@@ -132,18 +130,15 @@ function StartWatch() {
       ("0" + dateTimer.getUTCMilliseconds()).slice(-3, -1);
     totalTime++;
   }, 10);
-  // console.log(dateTimer);
 }
 
 function pauseWatch() {
-  // console.log(dateTimer);
   finaltimeEL.innerHTML = "";
   finaltimeEL.innerHTML = `Completion time: ${Math.floor(totalTime / 100)}:${
     totalTime % 100
   } seconds</br>Total Moves: ${totalMoves}</br>`;
   clearInterval(timer);
 }
-
 function resetWatch() {
   watch.classList.remove("paused");
   clearInterval(timer);
