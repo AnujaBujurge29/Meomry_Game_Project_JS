@@ -1,23 +1,18 @@
-* 2 player game
-* Start Button 
-* mouse click to open card, card will flip, if pair match blocked the cards with open side/ or delet the cards
-* if cards do not match, flip to close side
-* calculate number of moves of each player
-* one player can continue till draws correct pairs, if in-correct pair draw, its chance of next player.
-* Calculate correct pairs
-* player with more correct pairs, WIN
-
-
 GAME RULES:
 
 1. Step 1 :  Beginning of the game
 At the beginning of the game, all the cards are mixed up and laid in cols and rows, face down on the table.
 
-2. Step 2 :  Player 1
-Player 1 starts and turns over two cards.
+2. Step 2 : Start flipping Cards
+Player start flipping cards, and at the same time StopWatch also starts.
 
-3. Step 3 :  Player 1
+3. Step 3 : 
+Player turns over 2 cards.
+
+4. Step 4:
 In this case, the cards don not match, it is not a pair, so he turns them back over.
+
+
 
 4. Step 4 :  Player 2
 It is then the turn of player 2 to turn over two new cards.

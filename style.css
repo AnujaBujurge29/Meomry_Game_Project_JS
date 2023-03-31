@@ -11,7 +11,7 @@
   box-sizing: border-box;
 }
 .heading{
-  padding: 20px;
+  /* padding: 20px; */
   margin: 20px;
 }
 .container_main {
@@ -86,7 +86,6 @@
 }
 .tiles.flip {
   transform: rotateY(180deg);
-  
 }
 .shuffled,
 .original {
@@ -103,11 +102,20 @@
 .shuffled {
   transform: rotateY(180deg);
 }
-
-/* .container_2 {
-  background-color: lightgrey;
-  display: flex;
-  height: 100vh;
-  margin-left: 25%;
-  margin-right: 25%;
+.modalWin {
+  background-color: rgba(143, 25, 25, 0.4);
+  visibility: hidden;
+  margin: 0; 
+  padding: 5px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  position: fixed;
+  top: 30%;
+  left: 15%;
+  width: 70%;
+  height: 10%;
+}
+/* .stopwatch{
+  padding: 5px;
 } */
+

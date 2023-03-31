@@ -6,30 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Memory Game - Mini Project</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="style_stopwatch.css" />
     <script defer src="app.js"></script>
-    <script defer src="stopwatchFunctions.js"></script>
   </head>
   <body>
     <h1 class="heading">Memory Tiles Game</h1>
     <button class="start">Memory Game</button>
 
     <div class="container_main">
-      <!-- <div class="container_1">
-        <div class="player_1">Player: 1<br />pairs:</div>
-        <div class="player_2">Player: 2<br />pairs:</div>
-      </div> -->
-
       <section class="stopwatch">
         <div class="watch">
-            <h2 id="watch">00:00:00:00</h2>
+          <h2 id="watch">00:00:00:00</h2>
         </div>
-        <div class="buttons">
-            <button id="start">Start</button>
-            <button id="pause">Pause</button>
-            <button id="reset">Reset</button>
-        </div>
-    </section>
+      </section>
 
       <div class="container_2">
         <section class="game-tiles">
@@ -82,23 +70,28 @@
             <img class="shuffled" src="images\logo_6.jpg" />
           </div>
           <div class="tiles" data-name="7">
-            <img class="original" src="images\front-image.png">
+            <img class="original" src="images\front-image.png" />
             <img class="shuffled" src="images\logo_7.png" />
           </div>
           <div class="tiles" data-name="7">
-            <img class="original" src="images\front-image.png">
+            <img class="original" src="images\front-image.png" />
             <img class="shuffled" src="images\logo_7.png" />
           </div>
           <div class="tiles" data-name="8">
-            <img class="original" src="images\front-image.png">
+            <img class="original" src="images\front-image.png" />
             <img class="shuffled" src="images\logo_8.jpg" />
           </div>
           <div class="tiles" data-name="8">
-            <img class="original" src="images\front-image.png">
+            <img class="original" src="images\front-image.png" />
             <img class="shuffled" src="images\logo_8.jpg" />
           </div>
         </section>
       </div>
+    </div>
+
+    <div class="modalWin">
+      <p>Congratulations! You Won!</p>
+      <p class="finalTime">Completion time:</p>
     </div>
   </body>
 </html>
