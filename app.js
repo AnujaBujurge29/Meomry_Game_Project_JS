@@ -98,12 +98,12 @@ function resetBoard() {
   [firstCard, secondCard] = [null, null];
 }
 
-// (function shuffle() {
-//   cards.forEach((evt) => {
-//     let randomPosition = Math.floor(Math.random() * diffLevelTiles);
-//     evt.style.order = randomPosition;
-//   });
-// })();
+(function shuffle() {
+  cards.forEach((evt) => {
+    let randomPosition = Math.floor(Math.random() * diffLevelTiles);
+    evt.style.order = randomPosition;
+  });
+})();
 
 function hasWon() {
   if (matched === diffLevelTiles) {

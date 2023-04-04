@@ -1,4 +1,13 @@
-### GAME RULES:
+## Mini Project - 4*4 Memory Game
+Every time you start a new game, a random positioning of the cards ensure you a different game than the previous one, so you can play as many times as you want!
+Just click on "START" to start the game.
+
+## Tech/framework used
+    - Javascript
+    - HTML 
+    - CSS
+
+### Game Rules:
 
 1. Step 1 :  Beginning of the game
 At the beginning of the game, all the cards are mixed up and laid in cols and rows, face down on the table.
@@ -26,3 +35,8 @@ The two cards do not match, turns them back over, and so on...
 
 When the player found all the pairs, the game is over. 
 The player wins!
+
+![Memory_Game](images\memory_game_screenshot.gif)
+
+## Credits
+[https://www.memozor.com/memory-games/for-2-players/casino\]
