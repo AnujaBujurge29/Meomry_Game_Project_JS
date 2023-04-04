@@ -12,9 +12,9 @@ Just click on "START" to start the game.
 Match cards in less time with less moves.
 
 ### Game Rules:
-![Alt text](.memory-game_startup.gif)
+![start](./memory-game-startup.gif)
 
-![Alt text](.example.gif)
+![sample](./example.gif)
 
 1. Step 1 :  Beginning of the game
 On the front Page, Memory Game button is available which will activate/restart the game.
@@ -28,7 +28,6 @@ Player start flipping cards, and at the same time StopWatch also starts and star
 Player turns over 2 cards.
 
 4. Step 4:
-
 In this case, the cards don not match, it is not a pair, so he turns them back over.
 
 5. Step 5 : 
