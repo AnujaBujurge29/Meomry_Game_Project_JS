@@ -66,4 +66,6 @@ Player can replay the game with the help of replay button
 
 ## Credits
 
-[https://www.memozor.com/memory-games/for-2-players/casino\]
+[Reference Game](https://www.memozor.com/memory-games/for-2-players/casino/)
+
+## You Can [Play Game](https://anujabujurge29.github.io/mini_project_Meomry_Game/) here!!
