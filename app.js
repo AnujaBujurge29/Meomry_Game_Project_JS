@@ -7,6 +7,7 @@ let totalTime = 0; // total time required for player to finish the game
 let milliseconds = 0; // timer counter
 let timer = 0; //timer counter
 let dateTimer; // timer counter
+let diffLevelTiles = 16
 
 const watch = document.querySelector(".watch");
 // element for stopwatch on top
@@ -99,13 +100,13 @@ function resetBoard() {
 
 // (function shuffle() {
 //   cards.forEach((evt) => {
-//     let randomPosition = Math.floor(Math.random() * 16);
+//     let randomPosition = Math.floor(Math.random() * diffLevelTiles);
 //     evt.style.order = randomPosition;
 //   });
 // })();
 
 function hasWon() {
-  if (matched === 16) {
+  if (matched === diffLevelTiles) {
     modalEl.style.visibility = "visible";
     pauseWatch();
     return true;
