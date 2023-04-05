@@ -110,13 +110,13 @@ function resetBoard() {
   [firstCard, secondCard] = [null, null];
 }
 
-// //Shuffling Board to random position of tiles
-// (function shuffle() {
-//   cards.forEach((evt) => {
-//     let randomPosition = Math.floor(Math.random() * diffLevelTiles);
-//     evt.style.order = randomPosition;
-//   });
-// })();
+//Shuffling Board to random position of tiles
+(function shuffle() {
+  cards.forEach((evt) => {
+    let randomPosition = Math.floor(Math.random() * diffLevelTiles);
+    evt.style.order = randomPosition;
+  });
+})();
 
 
 
